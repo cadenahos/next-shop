@@ -50,14 +50,30 @@ return (
             </div>
             <div className={styles['navbar-right']}>
                 <ul>
-                    <li className={styles['navbar-email']} onClick={handleToggle}>
-                        platzi@example.com
+                    <li 
+                    className={styles['navbar-email']} 
+                    >
+                        <div
+                        role="presentation"  
+                        onClick={handleToggle} 
+                        onKeyPress={handleToggle} 
+                        >
+                            platzi@example.com
+                        </div>
                     </li>
                     <li 
                         className={styles['navbar-shopping-cart']} 
-                        onClick={() => setToggleOrders(!toggleOrders)}
                     >
-                    <Image src={shopingCart} alt="shopping cart"/> {state.cart.length > 0 ? <div> {state.cart.length} </div> :  null }
+                        <div
+                        role="presentation"  
+                        onClick={() => setToggleOrders(!toggleOrders)}
+                        onKeyDown={() => setToggleOrders(!toggleOrders)}
+                        >
+                            <Image 
+                            src={shopingCart} 
+                            alt="shopping cart"/> 
+                            {state.cart.length > 0 ? <div className={styles['cart-bubble']}> {state.cart.length} </div> :  null }
+                        </div>
                     </li>
                 </ul>
             </div>

@@ -51,7 +51,7 @@
 .navbar-email {
     color: $--very-light-pink;
     font-size: $--sm;
-    margin-right: 12px;
+    margin-right: 30px;
     cursor: pointer;
 }
 
@@ -59,7 +59,7 @@
     position: relative;
 }
 
-.navbar-shopping-cart div {
+.cart-bubble{
     width: 16px;
     height: 16px;
     background-color: $--hospital-green;
@@ -73,7 +73,6 @@
     justify-content: center;
     align-items: center;
 }
-
 @media (max-width: 640px) {
     .menu {
         display: block;

@@ -1,6 +1,8 @@
 @import 'vars';
 
 .Menu {
+	display: flex;
+	justify-content: space-between;
 	width: 100px;
 	height: auto;
 	border: 1px solid $--very-light-pink;
