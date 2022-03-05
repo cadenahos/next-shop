@@ -2,7 +2,7 @@ import React, {useContext} from 'react';
 import Image from 'next/image';
 import AppContext from '@context/AppContext';
 import styles from '@styles/ProductItem.module.scss';
-import bike from '@logos/logo_yard_sale.svg'
+import bike from '@logos/logo_yard_sale.svg';
 import addCart from '@icons/bt_add_to_cart.svg';
 
 

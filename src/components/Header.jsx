@@ -22,7 +22,11 @@ const Header = () => {
 return (
     <>
         <nav className={styles.Nav}> 
-            <Image src={menu} alt="menu" className={styles.menu}/>
+            <Image src={menu.src} alt="menu" 
+            className={styles.menu}
+            width='20px'
+            height='20px'
+            />
             <div className={styles['navbar-left']}>
                 <Link href="/" passHref>
                     <Image src={logo} alt="logo" className={styles['nav-logo']}/>

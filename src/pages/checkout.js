@@ -1,8 +1,19 @@
+import React, {useContext} from 'react';
+import AppContext from '@context/AppContext';
 import Head from 'next/head';
-import React from 'react';
 import OrderItem from '@components/OrderItem';
 import styles from '@styles/Checkout.module.scss';
 const CheckOut = () => {
+  const {state} = useContext(AppContext);
+  const sumTotal = ()=>{
+		const reducer = (accumulator, currentValue) => accumulator + currentValue.price;
+		const sum = state.cart.reduce(reducer, 0);
+		return sum;
+	};
+  const itemNumber = ()=>{
+    const items = state.cart.length;
+    return items;
+  };
   return (
     <>
       <Head>
@@ -14,13 +25,17 @@ const CheckOut = () => {
           <div className={styles['Checkout-content']}>
             <div className={styles['order']}>
               <p>
-                <span>03.25.21</span>
-                <span>6 articles</span>
+                <span>Order</span>
+                <span>{itemNumber()} articles</span>
               </p>
-              <p>$560.00</p>
+              <p>${sumTotal()}</p>
             </div>
           </div>
-          <OrderItem />
+          {
+            state.cart.map(product => (
+            <OrderItem product={product} key = {`productItem-${product.id}`} />
+            ))
+				  }
         </div>
       </div>
     </>

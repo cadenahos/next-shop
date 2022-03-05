@@ -15,8 +15,8 @@ const OrderItem = ({product}) => {
 				<Image 
 				src={product?.images[0]} 
 				alt={product?.title} 
-				width="220"
-				height="220"
+					width="220"
+					height="220"
 				/>
 			</figure>
 			<p>{product?.title}</p>
